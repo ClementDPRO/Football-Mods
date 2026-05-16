@@ -1,0 +1,16 @@
+[
+{
+  "modid": "footballmods",
+  "name": "Football Mods",
+  "description": "a realistic Football mods.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["clemdefrance"],
+  "credits": "The Forge and FML guys, for making this example",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
