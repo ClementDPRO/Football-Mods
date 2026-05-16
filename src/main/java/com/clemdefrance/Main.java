@@ -1,15 +1,18 @@
 package com.clemdefrance;
 
-import net.minecraft.client.Minecraft;
+import com.clemdefrance.proxy.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import org.lwjgl.opengl.Display;
-import scala.collection.parallel.ParIterableLike;
 
 @Mod(modid = Main.MODID, name = Main.NAME, version = Main.VERSION)
 public class Main {
+
+    @SidedProxy(clientSide = "com.clemdefrance.proxy.ClientProxy", serverSide = "com.clemdefrance.proxy.CommonProxy")
+    public static CommonProxy proxy;
+
     public static final String MODID = "footballmods";
     public static final String NAME = "Football Mods";
     public static final String VERSION = "1.0";
@@ -22,11 +25,11 @@ public class Main {
     @Mod.EventHandler
     public void Init(FMLInitializationEvent event) {
         System.out.println("[Football] Init!");
+        proxy.init();
     }
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
         System.out.println("[Football] Post-Init!");
-        Display.setTitle("Football mods - " + Minecraft.getMinecraft().player.getName().toString());
     }
 }
