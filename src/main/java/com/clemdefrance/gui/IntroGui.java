@@ -24,8 +24,9 @@ public class IntroGui extends GuiScreen {
         for (int i = 1; i <= TOTAL_FRAMES; i++) {
             ResourceLocation location = new ResourceLocation(
                     "footballmods",
-                    "textures/gui/intro/frame" + i + ".png"
+                    "textures/gui/intro/frame" + String.valueOf(i)
             );
+            System.out.println(location);
             FRAMES.put(i, location);
         }
     }
